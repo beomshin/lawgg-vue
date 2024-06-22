@@ -2,7 +2,7 @@
  
 - lg-ws 
     - SPA WEB 사용자 vue project
-
+ 
 ## 프로젝트 실행
 
 - npm install
