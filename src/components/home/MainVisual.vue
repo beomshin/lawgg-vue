@@ -10,12 +10,7 @@
         <p @click="go(hot.id)" ><button style="cursor: pointer">More <i class="uil uil-arrow-right"></i></button></p>
       </dt>
       <dd>
-      <div v-if="!hot.altVideoUrl || hot.altVideoUrl.length == 0">
         <iframe width="100%" height="300"  :src="hot.playVideo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <div v-else>
-        <iframe width="100%" height="300"  :src="hot.altVideoUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
       </dd>
     </dl>
   </div>
