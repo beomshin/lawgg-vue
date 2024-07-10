@@ -29,8 +29,9 @@ import MainVisual from "@/components/home/MainVisual";
 import MainTrial from "@/components/home/MainTrial";
 import MainPosition from "@/components/home/MainPosition";
 import MainIssue from "@/components/home/MainIssue";
+import service from "../../http/service";
 // import Banner from "@/components/common/Banner";
-import service from "@/http/service";
+// import service from "@/http/service";
 
 
 export default {
@@ -53,18 +54,31 @@ export default {
       hot:{}
     }
   },
-  mounted() {
-    service.home().then(res => {
-      this.trials = res.data.trials
-      this.top = res.data.top
-      this.jungle = res.data.jungle
-      this.mid = res.data.mid
-      this.bot = res.data.bot
-      this.spt = res.data.spt
+  created() {
+    service.main().then(res => {
+      console.log(res.data)
+      this.initMainPage(res.data)
     })
-    service.hot().then(res => {
-      this.hot = res.data
-    })
+  },
+  methods: {
+    initMainPage(data) {
+      if (!data) {
+        alert('메인 페이지 로딩에 실패하였습니다. 잠시후 다시 시도해주세요.')
+        return
+      }
+
+      this.trials = data.trials // 트라이얼 리스트
+      data.boards.forEach(e => {
+        switch (e.lineType) {
+          case 0: this.top.push(e); break;// 탑
+          case 1: this.jungle.push(e); break; // 정글
+          case 2: this.mid.push(e); break; // 미드
+          case 3: this.bot.push(e); break; // 원딜
+          case 4: this.spt.push(e); break; // 서폿
+        }
+      })
+      this.hot = data.hotTrial
+    }
   }
 };
 </script>
