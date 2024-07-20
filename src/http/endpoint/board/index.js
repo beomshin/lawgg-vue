@@ -4,7 +4,7 @@ const END_POINT = {
     DELETE_USER_BOARD: '/api/board/delete/user', // 회원 게시판 삭제
     LOGIN_ANONYMOUS_BOARD: '/api/public/board/login/anonymous', // 익명 게시판 로그인
     LOGIN_USER_BOARD: '/api/board/login/user', // 회원 게시판 로그인
-    FIND_ALL_LIST_BOARD: '/api/public/board/find/all/list', // 포지션 게시판 전체 조회
+    FIND_ALL_LIST_BOARD: '/api/public/v1/find/boards', // 포지션 게시판 전체 조회
     FIND_USER_LIST_BOARD: '/api/board/find/user/list', // 회원 포지션 게시판 조회
     FIND_LAW_FIRM_LIST_BOARD: '/api/public/board/find/law-firm/list', // 로펌 포지션 게시판 전체 조회
     FIND_ANONYMOUS_DETAIL_BOARD: (id) => { return `/api/public/board/find/anonymous/detail/${id}`}, // 게시판 상세 조회 (익명)
