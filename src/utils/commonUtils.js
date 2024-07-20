@@ -81,10 +81,10 @@ export default {
         else if (resultCode == '17000') {
             alert('문제가 발생했습니다.')
             return false
-        } else if (resultCode == '17004') {
+        } else if (resultCode == '2006') {
             alert('정지된 계정입니다.')
             return false
-        } else if (resultCode == '17005') {
+        } else if (resultCode == '2007') {
             alert('삭제된 계정입니다.')
             return false
         } else {
