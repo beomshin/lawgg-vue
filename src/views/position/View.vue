@@ -12,7 +12,7 @@
 <!--    <Banner/>-->
 
     <!-- 댓글 -->
-    <position-comment :comments.sync="comments" :boardId.sync="board.boardId" :rootId.sync="board.boardCommentId" @findComments="findComments"/>
+    <position-comment :comments.sync="comments" :boardId.sync="board.boardId" :rootId.sync="board.boardCommentId" />
 
     <report-modal @report="report"/>
 
@@ -26,8 +26,8 @@ import service from "@/http/service";
 import FindAnonymousDetailBoardRequestDto from "@/dto/board/request/board/FindAnonymousDetailBoardRequestDto";
 import findUserDetailBoardRequestDto from "@/dto/board/request/board/FindUserDetailBoardRequestDto";
 import commonUtils from "@/utils/commonUtils";
-import FindAnonymousAllCommentBoardRequestDto from "@/dto/board/request/comment/FindAnonymousAllCommentBoardRequestDto";
-import FindUserAllCommentBoardRequestDto from "@/dto/board/request/comment/FindUserAllCommentBoardRequestDto";
+// import FindAnonymousAllCommentBoardRequestDto from "@/dto/board/request/comment/FindAnonymousAllCommentBoardRequestDto";
+// import FindUserAllCommentBoardRequestDto from "@/dto/board/request/comment/FindUserAllCommentBoardRequestDto";
 import PositionComment from "@/components/position/view/PositionComment";
 import RecommendBoardRequestDto from "@/dto/board/request/board/RecommendBoardRequestDto";
 import ReportBoardRequestDto from "@/dto/board/request/board/ReportBoardRequestDto";
@@ -61,10 +61,10 @@ export default {
   },
   methods: {
     ...mapMutations(userHelper.name, userHelper.mutations),
-    findComments() { // 댓글 조회
-      if (this.getIsLogin) this.searchCommentUser(this.id); // 게시판 로그인 댓글 조회
-      else this.searchCommentAnonymous(this.id) // 게시판 비로그인 댓글 조회
-    },
+    // findComments() { // 댓글 조회
+    //   if (this.getIsLogin) this.searchCommentUser(this.id); // 게시판 로그인 댓글 조회
+    //   else this.searchCommentAnonymous(this.id) // 게시판 비로그인 댓글 조회
+    // },
     findBoard() { // board 조회
       if (this.getIsLogin) this.searchUser(this.id) // 게시판 로그인 유저 조회
       else this.searchAnonymous(this.id) // 게시판 비로그인 유저 조회
@@ -92,7 +92,7 @@ export default {
       const res = await service.findUserDetailBoard(param)
       if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
         this.board = res.data.board
-        this.findComments() // 댓글 조회
+        this.comments = res.data.board.comments
       } else {
         window.history.back()
       }
@@ -100,27 +100,29 @@ export default {
     async searchAnonymous(id) { // 게시판 비로그인 조회
       const param = new FindAnonymousDetailBoardRequestDto(id)
       const res = await service.findAnonymousDetailBoard(param)
+      this.board = res.data.board
+      this.comments = res.data.board.comments
       if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
         this.board = res.data.board
-        this.findComments() // 댓글 조회
+        this.comments = res.data.board.comments
       } else {
         window.history.back()
       }
     },
-    async searchCommentUser(id) { // 게시글 댓글 로그인 조회
-      const param = new FindUserAllCommentBoardRequestDto(id)
-      const res = await service.findUserAllCommentBoard(param)
-      if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
-        this.comments = res.data.comments
-      }
-    },
-    async searchCommentAnonymous(id) { // 게시글 댓글 비로그인 조회
-      const param = new FindAnonymousAllCommentBoardRequestDto(id)
-      const res = await service.findAnonymousAllCommentBoard(param)
-      if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
-        this.comments = res.data.comments
-      }
-    },
+    // async searchCommentUser(id) { // 게시글 댓글 로그인 조회
+    //   const param = new FindUserAllCommentBoardRequestDto(id)
+    //   const res = await service.findUserAllCommentBoard(param)
+    //   if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
+    //     this.comments = res.data.comments
+    //   }
+    // },
+    // async searchCommentAnonymous(id) { // 게시글 댓글 비로그인 조회
+    //   const param = new FindAnonymousAllCommentBoardRequestDto(id)
+    //   const res = await service.findAnonymousAllCommentBoard(param)
+    //   if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
+    //     this.comments = res.data.comments
+    //   }
+    // },
     async deleteBoard() { // 유저 게시판 삭제
       const request = new DeleteUserBoardRequestDto(this.id, null)
       const res = await service.deleteUserBoard(request)
