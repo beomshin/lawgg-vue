@@ -99,7 +99,7 @@ export default {
       if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
         this.clear()
         this.updateCommentCount(1)
-        this.$emit('findComments')
+        window.location.reload()
       }
     },
     async enrollCommentAnonymous(parentId, loginId, password, content, depth, boardCommentId) {
@@ -107,7 +107,7 @@ export default {
       const res = await service.enrollAnonymousCommentBoard(param)
       if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
         this.clear()
-        this.$emit('findComments')
+        window.location.reload()
       }
     },
     async deleteAnonymousComment(args) {
@@ -115,8 +115,8 @@ export default {
       const res = await service.deleteAnonymousCommentBoard(param)
       if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
         this.clearComment()
-        this.$emit('findComments')
         alert('댓글을 삭제했습니다.')
+        window.location.reload()
       }
     },
     async deleteUserComment(id) {
@@ -124,8 +124,8 @@ export default {
       const res = await service.deleteUserCommentBoard(param)
       if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
         this.updateCommentCount(-1)
-        this.$emit('findComments')
         alert('댓글을 삭제했습니다.')
+        window.location.reload()
       }
     },
     clear() {
