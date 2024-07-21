@@ -9,9 +9,9 @@ const END_POINT = {
     FIND_LAW_FIRM_LIST_BOARD: '/api/public/v1/find/law-firm/boards', // 로펌 포지션 게시판 전체 조회
     FIND_ANONYMOUS_DETAIL_BOARD: (id) => { return `/api/public/v1/find/board/${id}`}, // 게시판 상세 조회 (익명)
     FIND_USER_DETAIL_BOARD: (id) => { return `/api/v1/find/board/${id}` }, // 게시판 상세 조회 (화원)
-    ENROLL_USER_BOARD: '/api/board/enroll/user', // 회원 포지션 게시판 등록
-    ENROLL_ANONYMOUS_BOARD: '/api/public/board/enroll/anonymous', // 익명 포지션 게시판 등록
-    ENROLL_LAW_FIRM_BOARD: '/api/board/enroll/law-firm', // 로펌 포지션 게시판 등록
+    ENROLL_USER_BOARD: '/api/v1/enroll/board', // 회원 포지션 게시판 등록
+    ENROLL_ANONYMOUS_BOARD: '/api/public/v1/enroll/board', // 익명 포지션 게시판 등록
+    ENROLL_LAW_FIRM_BOARD: '/api/v1/enroll/law-firm/board', // 로펌 포지션 게시판 등록
     RECOMMEND_BOARD: '/api/board/recommend', // 게시판 추천
     DELETE_RECOMMEND_BOARD: '/api/board/delete/recommend', // 게시판 추천 삭제
     REPORT_BOARD: '/api/public/board/report', // 게시판 신고
