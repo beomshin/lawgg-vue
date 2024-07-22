@@ -15,8 +15,8 @@ const END_POINT = {
     RECOMMEND_BOARD: '/api/board/recommend', // 게시판 추천
     DELETE_RECOMMEND_BOARD: '/api/board/delete/recommend', // 게시판 추천 삭제
     REPORT_BOARD: '/api/public/board/report', // 게시판 신고
-    UPDATE_USER_BOARD: '/api/board/update/user', // 회원 게시판 수정
-    UPDATE_ANONYMOUS_BOARD: '/api/public/board/update/anonymous' // 익명 게시판 수정
+    UPDATE_USER_BOARD: '/api/v1/update/board', // 회원 게시판 수정
+    UPDATE_ANONYMOUS_BOARD: '/api/public/v1/update/board' // 익명 게시판 수정
 }
 
 export default END_POINT
