@@ -1,7 +1,7 @@
 
 const END_POINT = {
-    DELETE_ANONYMOUS_BOARD: '/api/public/board/delete/anonymous', // 익명 게시판 삭제
-    DELETE_USER_BOARD: '/api/board/delete/user', // 회원 게시판 삭제
+    DELETE_ANONYMOUS_BOARD: '/api/public/v1/delete/board', // 익명 게시판 삭제
+    DELETE_USER_BOARD: '/api/v1/delete/board', // 회원 게시판 삭제
     LOGIN_ANONYMOUS_BOARD: '/api/public/board/login/anonymous', // 익명 게시판 로그인
     LOGIN_USER_BOARD: '/api/board/login/user', // 회원 게시판 로그인
     FIND_ALL_LIST_BOARD: '/api/public/v1/find/boards', // 포지션 게시판 전체 조회
