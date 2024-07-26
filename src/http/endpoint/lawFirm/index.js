@@ -6,9 +6,9 @@ const END_POINT = {
     DELETE_LAW_FIRM: '/api/law-firm/delete', // 로펌 삭제하기
     QUIT_LAW_FIRM: '/api/v1/quit/law-firm', // 로펌 탈퇴하기
     USER_DELETE_LAW_FIRM: '/api/law-firm/user/delete', // 로펌 회원 탈퇴시키기
-    FIND_ALL_LAW_FIRM_LIST: '/api/public/law-firm/list', // 로펌 리스트 조회하기
-    FIND_ANONYMOUS_LAW_FIRM_DETAIL: (id) => { return `/api/public/anonymous/law-firm/${id}` }, // 로펌 비회원 상세 조회하기
-    FIND_USER_LAW_FIRM_DETAIL: (id) => { return `/api/user/law-firm/${id}` }, // 로펌 상세 조회하기
+    FIND_ALL_LAW_FIRM_LIST: '/api/public/v1/find/law-firms', // 로펌 리스트 조회하기
+    FIND_ANONYMOUS_LAW_FIRM_DETAIL: (id) => { return `/api/public/v1/find/law-firm/${id}` }, // 로펌 비회원 상세 조회하기
+    FIND_USER_LAW_FIRM_DETAIL: (id) => { return `/api/v1/find/law-firm/${id}` }, // 로펌 상세 조회하기
     FIND_MY_LAW_FIRM: '/api/law-firm/find/my',  // 내 로펌 정보 조회
     FIND_APPLY_LIST_MY_LAW_FIRM: '/api/law-firm/find/apply/list/my', // 로펌 지원자 리스트 조회하기
     FIND_USER_LIST_MY_LAW_FIRM: '/api/law-firm/find/user/list/my', // 로펌 유저 리스트 조회하기
