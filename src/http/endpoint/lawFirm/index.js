@@ -1,6 +1,6 @@
 
 const END_POINT = {
-    APPLY_LAW_FIRM: '/api/law-firm/apply', // 로펌 신청하기
+    APPLY_LAW_FIRM: '/api/v1/apply/law-firm', // 로펌 신청하기
     CONFIRM_LAW_FIRM: '/api/law-firm/confirm', // 로펌 신청 접수하기
     ENROLL_LAW_FIRM: '/api/law-firm/enroll', // 로펌 만들기
     DELETE_LAW_FIRM: '/api/law-firm/delete', // 로펌 삭제하기
