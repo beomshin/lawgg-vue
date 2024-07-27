@@ -71,7 +71,8 @@ export default {
       if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
         this.clear()
         this.updateCommentCount(1)
-        this.$emit('findComments')
+        // this.$emit('findComments')
+        window.location.reload()
       }
     },
     async deleteComment(id) {
@@ -79,7 +80,8 @@ export default {
         const res = await service.deleteCommentTrial(param)
         if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
           this.updateCommentCount(-1)
-          this.$emit('findComments')
+          // this.$emit('findComments')
+          window.location.reload()
         }
     },
     openComment(no) {
