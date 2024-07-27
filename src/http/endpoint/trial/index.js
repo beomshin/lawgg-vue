@@ -14,8 +14,8 @@ const END_POINT = {
     REPORT_TRIAL: '/api/public/trial/report', // 트라이얼 신고
     VOTE_TRIAL: '/api/trial/vote', // 트라이얼 투표
     UPDATE_TRIAL: '/api/trial/update',  // 트라이얼 수정
-    UPDATE_LIVE_TRIAL: '/api/trial/update/live',  // 트라이얼 라이브
-    UPDATE_END_TRIAL: '/api/trial/update/end', // 트라이얼 종료
+    UPDATE_LIVE_TRIAL: '/api/v1/live/start/trial',  // 트라이얼 라이브
+    UPDATE_END_TRIAL: '/api/v1/live/end/trial', // 트라이얼 종료
     UPLOAD_VIDEO_TRIAL: '/api/v1/enroll/video',
 }
 
