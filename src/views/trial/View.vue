@@ -11,7 +11,7 @@
 <!--    <Banner/>-->
 
     <!-- 댓글 -->
-    <trial-comment :comments="comments" :trialId.sync="trial.trialId" :rootId.sync="trial.trialCommentId" @findComments="findComments"/>
+    <trial-comment :comments="comments" :trialId.sync="trial.trialId" :rootId.sync="trial.trialCommentId"/>
 
     <report-modal @report="report"/>
   </div>
@@ -83,7 +83,8 @@ export default {
       const res = await service.findUserDetailTrial(param)
       if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
         this.trial = res.data.trial
-        await this.searchCommentUser()
+        this.comments = res.data.trial.comments
+        // await this.searchCommentUser()
       } else {
         window.history.back()
       }
@@ -93,7 +94,8 @@ export default {
       const res = await service.findAnonymousDetailTrial(param)
       if (commonUtils.globalCheckResultCode(res.data.resultCode)) {
         this.trial = res.data.trial
-        await this.searchCommentAnonymous()
+        this.comments = res.data.trial.comments
+        // await this.searchCommentAnonymous()
       } else {
         window.history.back()
       }
