@@ -1,7 +1,7 @@
 
 const END_POINT = {
-    DELETE_COMMENT_TRIAL: '/api/trial/delete/comment', // 트라이얼 댓글 삭제 (회원)
-    ENROLL_COMMENT_TRIAL: '/api/trial/enroll/comment', // 트라이얼 댓글 등록 (회원)
+    DELETE_COMMENT_TRIAL: '/api/v1/delete/trial/comment', // 트라이얼 댓글 삭제 (회원)
+    ENROLL_COMMENT_TRIAL: '/api/v1/enroll/trial/comment', // 트라이얼 댓글 등록 (회원)
     FIND_ANONYMOUS_ALL_COMMENT_TRIAL: (id) => { return `/api/public/trial/find/anonymous/all/comment/${id}` }, // 트라이얼 게시판 댓글 전체 조회(익명)
     FIND_USER_ALL_COMMENT_TRIAL: (id) => { return `/api/trial/find/user/all/comment/${id}` }, // 트라이얼 게시판 댓글 전체 조회(회원)
     FIND_ANONYMOUS_PARENT_COMMENT_TRIAL: (id) => { return `/api/public/trial/find/anonymous/parent/comment/${id}` }, // 트라이얼 게시판 부모 댓글 조회(익명)
