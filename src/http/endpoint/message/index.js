@@ -1,6 +1,6 @@
 
 const END_POINT = {
-    SEND_MESSAGE: '/api/send/message', // 메세지 전송
+    SEND_MESSAGE: '/api/v1/send/message', // 메세지 전송
     REPLY_MESSAGE: '/api/reply/message', // 메세지 수신
     DELETE_SEND_MESSAGE: (id) => { return `/api/delete/send/message/${id}` }, // 발신 메세지 삭제
     DELETE_RECEIVE_MESSAGE: (id) => { return `/api/delete/receive/message/${id}` }, // 수신 메세지 삭제
