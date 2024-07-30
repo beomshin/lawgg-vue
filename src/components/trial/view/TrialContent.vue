@@ -140,7 +140,7 @@ export default {
     },
     getTrialJudge() {
       if(!this.trial.judgeId) return false;
-      return this.trial.judgeId == this.getUserInfo.id // 재판 시작한 판사인지
+      return this.trial.judgeId == this.getUserInfo.userId // 재판 시작한 판사인지
     }
   },
   methods: {
@@ -202,7 +202,7 @@ export default {
     startLive(url) {
       this.trial.liveType = 1;
       this.trial.url = url
-      this.trial.judgeId = this.getUserInfo.id
+      this.trial.judgeId = this.getUserInfo.userId
     },
     endTrial(precedent) {
       this.trial.endingType = 1
