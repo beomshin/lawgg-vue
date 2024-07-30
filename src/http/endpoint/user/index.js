@@ -10,7 +10,7 @@ const END_POINT = {
     FIND_USER_BOARDS: '/api/v1/find/find/user/boards', // 유저 게시판 조회
     FIND_USER_ALERT: '/api/v1/find/user/alerts', // 알림 조회
     UPDATE_ALERT: '/api/user/update/alert', // 알림 읽기
-    UPDATE_ALERT_ALL: '/api/user/update/alert/all', // 전체 알림 읽기
+    UPDATE_ALERT_ALL: '/api/v1/update/read/user/alerts', // 전체 알림 읽기
 }
 
 export default END_POINT
