@@ -39,7 +39,7 @@ export default {
     goAlarm(item) {
       if (item.readFlag == 0) {
         this.updateReadAlertFind(item.id)
-        service.updateAlert(new UpdateUserAlertRequestDto(item.id))
+        service.updateAlert(new UpdateUserAlertRequestDto(item.alertId))
       }
 
       if (item.type == 0) {

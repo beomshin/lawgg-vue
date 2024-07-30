@@ -85,7 +85,7 @@ export default {
     goAlarm(item, index) {
       if (item.readFlag == 0) {
         this.updateReadAlert(index)
-        service.updateAlert(new UpdateUserAlertRequestDto(item.id))
+        service.updateAlert(new UpdateUserAlertRequestDto(item.alertId))
       }
       this.$emit('openMessage')
       if (item.type == 0) {
